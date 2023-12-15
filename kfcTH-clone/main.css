@@ -12,28 +12,28 @@
     padding: 2vh;
 }
 .top-navbar div:first-child {
-    margin-left: 10vh;
+    margin-left: 25vh;
 }
 .top-navbar div:last-child {
-    margin-right: 10vh;
+    margin-right: 25vh;
 }
 
-.top-right-navbar {
+.topnav2 {
     display: flex;
     align-items: center;
     /* border: red solid 1px; */
 }
-.top-right-navbar ul{
+.topnav2 ul{
     list-style: none;
     display: flex;
 }
-.top-right-navbar li {
+.topnav2 li{
     display: flex;
     justify-content: center;
     align-content: center;
     margin: 1vh;
 }
-.top-right-navbar li a {
+.topnav2 li a{
     color: #000000;
     font-size: large;
     font-weight: bold; /* ทำข้อความให้เป็นตัวอักษรหนา */
@@ -42,7 +42,7 @@
     align-items: center;
     justify-self: flex-start;
 }
-.top-right-navbar li a img{
+.topnav2 li a img{
     width: 35px;
     height: 35px;
     margin-left: 1px;
@@ -51,14 +51,13 @@
 .main-navbar {
     width: 100%;
     background-color: #e4002b; 
-    padding: 0 0; /* เพิ่มระยะห่างด้านบนและล่างของเมนู */
 }
-.main-navbar ul {
+.main-navbar ul{
     list-style: none;
     display: flex;
     align-items: center;
 }
-.main-navbar li {
+.main-navbar li{
     display: flex;
     align-items: center;
     border: #ffffff solid 1px;
@@ -71,38 +70,33 @@
 .main-navbar li:hover{
     background-color: #000000;
 }
-.main-navbar li a {
+.main-navbar li a{
     color: #ffffff;
     text-decoration: none;
     display: flex;
     align-items: center;
-    padding: 2vh 4vh; /* ปรับระยะห่างด้านข้างของรายการ */
+    padding: 2.5vh 6vh; /* ปรับระยะห่างด้านข้างของรายการ */
 }
-.main-navbar li a img {
+.main-navbar li a img{
     width: 25px;
     height: 25px;
     margin-right: 5px; /* ระยะห่างระหว่างไอคอนและข้อความ */
 }
-.main-navbar li:first-child {
-    margin-left: 10vh; /* ปรับระยะห่างระหว่าง li แรกกับฝั่งซ้ายของ main-navbar */
-}
-.main-navbar li:last-child {
-    margin-left: 0;
-}
+.main-navbar li:first-child {margin-left: 25vh; /* ปรับระยะห่างระหว่าง li แรกกับฝั่งซ้ายของ main-navbar */}
+.main-navbar li:last-child {margin-left: 0;}
 
 .red-container {
     background-color: #e4002b;
     min-height: 65px;
 }
+
 /* footer*/
-/* เพิ่มพื้นหลังสีสีดำ และตั้งให้พื้นหลังในเมนูทั้งหมดเป็นขาว */
 footer {
     display: flex;
     flex-direction: column;
-    /* background-color: #e3dcdc; */
 }
 /* ปรับขนาดตัวอักษรของข้อความใน footer */
-footer h4, footer .about-content a {
+footer h4, footer .about-content a{
     padding: 0.5rem;
     margin: 1vh;
 }
@@ -110,40 +104,33 @@ footer h4{
     font-size: 18px;
     color: #e4002b;
 }
-footer a:hover {
-    color: #0f0;
-}
 
 .about-us {
     display: flex; /* ตั้งให้แสดงเนื้อหาในแนวแถว */
     flex-direction: row; 
     justify-content: space-around; 
 }
-.about-content {
-    padding-bottom: 2vh;
-    /* border: #ff0000 solid 1px; */
-}
+
+.about-content {padding-bottom: 2vh;}
+
 footer .about-content a{
     font-weight: bold;
     color: #000;
     text-decoration: none;
     text-wrap: wrap;
-    padding-left: 20px;
 }
 
-/* ให้ส่วนของเชื่อมต่อสื่อสังคมเป็นแนวนอน */
 .contact-app {
     display: flex;
     align-content: center;
 }
-/* กำหนดขนาดรูปภาพในสื่อสังคมและลิงค์ */
-.contact-app img {
+
+.contact-app img{
     width: 30px;
     height: 30px;
-    margin: -2vh; /*contact-app - footer h4, footer a */
+    margin: -1vh; /*contact-app - footer h4, footer a */
 }
 
-/* ข้อความสิทธิ์ในล่างสุดเรียงกลาง */
 .footer-copyright {
     width: 100%;
     display: flex;
@@ -182,36 +169,33 @@ footer .footer-copyright a{
     background-size: 100% 100%; /* ให้รูปภาพเต็มพื้นที่ของ div */
 }
 
-.separator {
-    color: black; /* เปลี่ยนสีของเส้นกั้นที่ใช้เป็นเส้นดำหนา */
-    font-weight: bold;
-}
-
 /* content */
-.slideshow-container {
+.slideshow {
     max-width: 100%;
     position: relative;
     margin: auto;
-    /* border: 1px solid red; */
+    overflow: hidden; /* เพื่อซ่อนสไลด์ที่ไม่ได้อยู่ในขอบเขตของ container */
 }
 
-.myslides {
-    display: none;
+.slides {
+    display: flex;
+    transition: transform 1.5s ease, opacity 1.5s ease;
 }
-.myslides img{
+.slides img {
     width: 100%;
     object-fit: cover;
 }
 
-.fade {
+/* .fade {
     animation-name: fade;
     animation-duration: 1.5s;
-  }
+}
   
   @keyframes fade {
     from {opacity: .4}
     to {opacity: 1}
-  }
+} */
+
 
 .prev, .next {
     place-items: center;
@@ -228,11 +212,9 @@ footer .footer-copyright a{
     border-radius: 0 3px 3px 0;
     user-select: none;
 }
-/* On hover, add a black background color with a little bit see-through */
 .prev:hover, .next:hover {
     background-color: rgba(0,0,0,0.8);
 }
-
 /* Position the "next button" to the right */
 .next {
     right: 0;
@@ -258,15 +240,12 @@ footer .footer-copyright a{
     transition: background-color 0.6s ease;
 }
 .active, .dot:hover {
-    background-color: #717171;
+    background-color: #424141;
 }
 
 .row-content {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    width: 100%;
-    justify-content: center;
-    margin: 0.25rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 
 .box-a {
@@ -276,7 +255,8 @@ footer .footer-copyright a{
     position: relative;
 }
 .box-a img{
-    width: 62vh;
+    width: 62.2vh;
+    max-width: 750px;
     height: 100%;
 }
 
@@ -289,7 +269,7 @@ footer .footer-copyright a{
     width: 60vh;
     height: 80%;
 }
-.text-box h3 {
+.text-box h3{
     font-weight: bold;
     color: #fff;
 }
@@ -306,4 +286,3 @@ footer .footer-copyright a{
     text-decoration: none;
     border-radius: 2px;
 }
-
