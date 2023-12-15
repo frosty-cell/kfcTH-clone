@@ -13,12 +13,6 @@
 let slideIndex = 1;
 let slideInterval;
 
-// function startSlideInterval() {
-//     slideInterval = setInterval(function (){
-//         plusSlides(1);
-//     }, 3000);
-// }
-
 function plusSlides(n) {
     showSlides(slideIndex += n);
 }
@@ -28,10 +22,20 @@ function currentSlide(n) {
     showSlides(slideIndex = n);
 }
 
-function showSlides(n) {
-    // startSlideInterval();
+//boostrap default=5000
+function startSlideInterval() {
+    slideInterval = setInterval(function (){
+        plusSlides(1);
+    }, 5000);
+}
 
-    let slides = document.getElementsByClassName("myslides");
+function stopSlideInterval() {
+    clearInterval(slideInterval);
+}
+
+function showSlides(n) {
+
+    let slides = document.getElementsByClassName("slides");
     let dots = document.getElementsByClassName("dot");
 
     if(n > slides.length) {slideIndex = 1};
@@ -40,6 +44,7 @@ function showSlides(n) {
     for(let i = 0; i < slides.length; i++){
         slides[i].style.display = "none"
     }
+    
     
     for(let i = 0; i < dots.length; i++) {
         dots[i].className = dots[i].className.replace(" active", "");
@@ -51,3 +56,14 @@ function showSlides(n) {
 }
 
 showSlides();
+startSlideInterval();
+
+let slideshowContainer = document.querySelector('.slideshow')
+
+slideshowContainer.addEventListener('mouseover', function () {
+    stopSlideInterval();
+});
+
+slideshowContainer.addEventListener('mouseout', function () {
+    startSlideInterval();
+});
